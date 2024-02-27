@@ -6,9 +6,9 @@
 
 		public void Initialize()
 		{
-			_employees.Add(new EmployeeModel("Bob Frapples", 34000, "SEK"));
-			_employees.Add(new EmployeeModel("John Doe", 29000, "SEK"));
-			_employees.Add(new EmployeeModel("Susan Collins", 37000, "SEK"));
+			_employees.Add(new EmployeeModel("Bob Frapples", 34000));
+			_employees.Add(new EmployeeModel("John Doe", 29000));
+			_employees.Add(new EmployeeModel("Susan Collins", 37000));
 		}
 
 		public List<EmployeeModel> GetAll()
@@ -16,9 +16,9 @@
 			return _employees;
 		}
 
-		public void Add(string name, int salary, string currency)
+		public void Add(EmployeeModel employee)
 		{
-			_employees.Add(new EmployeeModel(name, salary, currency));
+			_employees.Add(employee);
 		}
 	}
 }
