@@ -15,7 +15,7 @@
 				Console.WriteLine("2. List employees");
 				Console.WriteLine();
 
-				int choice = Utilities.GetMenuOption();
+				int choice = InputManager.GetMenuOption();
 
 				if (choice == 1)
 				{
@@ -23,8 +23,8 @@
 					Console.WriteLine("Add new employee");
 					Console.WriteLine();
 
-					string name = Utilities.GetName();
-					int salary = Utilities.GetSalary();
+					string name = InputManager.GetEmployeeName();
+					int salary = InputManager.GetEmployeeSalary();
 
 					repository.Add(name, salary);
 
@@ -33,7 +33,7 @@
 					Console.WriteLine("2. End application");
                     Console.WriteLine();
 
-                    choice = Utilities.GetMenuOption();
+                    choice = InputManager.GetMenuOption();
 
 					if (choice == 1) continue;
 					else break;
@@ -56,7 +56,7 @@
 					Console.WriteLine("2. End application");
 					Console.WriteLine();
 
-					choice = Utilities.GetMenuOption();
+					choice = InputManager.GetMenuOption();
 
 					if (choice == 1) continue;
 					else break;

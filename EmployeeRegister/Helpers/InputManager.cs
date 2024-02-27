@@ -1,6 +1,6 @@
 ﻿namespace EmployeeRegister.Helpers
 {
-    public class Utilities
+    public class InputManager
     {
         private const int MIN = 1;
         private const int MAX = 2;
@@ -22,7 +22,7 @@
             }
         }
 
-        public static string GetName()
+        public static string GetEmployeeName()
         {
             while (true)
             {
@@ -36,7 +36,7 @@
             }
         }
 
-        public static int GetSalary()
+        public static int GetEmployeeSalary()
         {
 			while (true)
 			{
