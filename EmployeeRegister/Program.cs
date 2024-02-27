@@ -5,24 +5,62 @@
 		static void Main(string[] args)
 		{
 			var repository = new EmployeeRepository();
-			repository.Initialize();
 
-			Utilities.DisplayMenu();
-			int choice = Utilities.GetChoice(1, 2);
-            Console.WriteLine();
-
-			if (choice == 1)
+			while (true)
 			{
-				var employee = Utilities.AddEmployee();
-				if (employee is not null)
+				Console.Clear();
+				Console.WriteLine("Employee Register");
+				Console.WriteLine();
+				Console.WriteLine("1. Add employee");
+				Console.WriteLine("2. List employees");
+				Console.WriteLine();
+
+				int choice = Utilities.GetMenuOption();
+
+				if (choice == 1)
 				{
-					repository.Add(employee);
+					Console.Clear();
+					Console.WriteLine("Add new employee");
+					Console.WriteLine();
+
+					string name = Utilities.GetName();
+					int salary = Utilities.GetSalary();
+
+					repository.Add(name, salary);
+
+					Console.WriteLine();
+					Console.WriteLine("1. Return to menu");
+					Console.WriteLine("2. End application");
+                    Console.WriteLine();
+
+                    choice = Utilities.GetMenuOption();
+
+					if (choice == 1) continue;
+					else break;
 				}
-			}
-            if (choice == 2)
-			{
-				var employees = repository.GetAll();
-				Utilities.DisplayEmployeeList(employees);
+				if (choice == 2)
+				{
+					Console.Clear();
+					Console.WriteLine("List of all employees");
+					Console.WriteLine();
+
+					var employees = repository.GetAll();
+					foreach (var employee in employees)
+					{
+						Console.WriteLine($"Name: {employee.Name}");
+						Console.WriteLine($"Salary: {employee.Salary} SEK");
+						Console.WriteLine();
+					}
+
+					Console.WriteLine("1. Return to menu");
+					Console.WriteLine("2. End application");
+					Console.WriteLine();
+
+					choice = Utilities.GetMenuOption();
+
+					if (choice == 1) continue;
+					else break;
+				}
 			}
         }
 	}
