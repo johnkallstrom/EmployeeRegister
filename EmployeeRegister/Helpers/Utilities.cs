@@ -2,56 +2,12 @@
 {
     public class Utilities
     {
-        public static void DisplayMenu()
-        {
-            Console.WriteLine("Employee Register");
-            Console.WriteLine();
-            Console.WriteLine("1. Add employee");
-            Console.WriteLine("2. List employees");
-            Console.WriteLine();
-        }
+        private const int MIN = 1;
+        private const int MAX = 2;
 
-        public static void DisplayEmployeeList(List<EmployeeModel> employees)
-        {
-            Console.Clear();
-            Console.WriteLine("List of all employees");
-            Console.WriteLine();
-            foreach (var employee in employees)
-			{
-				Console.WriteLine($"Name: {employee.Name}");
-				Console.WriteLine($"Salary: {employee.Salary} SEK");
-				Console.WriteLine();
-			}
+        private const string DIGITS = "0123456789";
 
-			Console.ReadKey();
-		}
-
-        public static EmployeeModel AddEmployee()
-        {
-            Console.Clear();
-            Console.WriteLine("Add new employee");
-            Console.WriteLine();
-
-            while (true)
-            {
-                Console.Write("Name: ");
-                string name = Console.ReadLine();
-
-                Console.Write("Salary: ");
-                int salary = int.Parse(Console.ReadLine());
-
-                if (string.IsNullOrWhiteSpace(name) || salary == 0)
-                {
-                    continue;
-                }
-                else
-                {
-                    return new EmployeeModel(name, salary);
-                }
-            }
-        }
-
-        public static int GetChoice(int min, int max)
+        public static int GetMenuOption()
         {
             while (true)
             {
@@ -60,12 +16,43 @@
 
                 if (int.TryParse(input, out int choice))
                 {
-                    if (choice >= min && choice <= max)
+                    if (choice >= MIN && choice <= MAX)
                     {
                         return choice;
                     }
                 }
             }
         }
+
+        public static string GetName()
+        {
+            while (true)
+            {
+                Console.Write("Name: ");
+                string name = Console.ReadLine();
+
+                if (!string.IsNullOrWhiteSpace(name))
+                {
+                    return name;
+                }
+            }
+        }
+
+        public static int GetSalary()
+        {
+			while (true)
+			{
+				Console.Write("Salary: ");
+				string input = Console.ReadLine();
+
+                if (int.TryParse(input, out int salary))
+                {
+                    if (salary > 0)
+                    {
+                        return salary;
+                    }
+                }
+			}
+		}
     }
 }
