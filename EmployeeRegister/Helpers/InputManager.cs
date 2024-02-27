@@ -12,11 +12,11 @@
                 Console.Write("Enter: ");
                 string input = Console.ReadLine();
 
-                if (int.TryParse(input, out int choice))
+                if (int.TryParse(input, out int option))
                 {
-                    if (choice >= MIN && choice <= MAX)
+                    if (option >= MIN && option <= MAX)
                     {
-                        return choice;
+                        return option;
                     }
                 }
             }

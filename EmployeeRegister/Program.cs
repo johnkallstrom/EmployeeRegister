@@ -15,9 +15,9 @@
 				Console.WriteLine("2. List employees");
 				Console.WriteLine();
 
-				int choice = InputManager.GetMenuOption();
+				int option = InputManager.GetMenuOption();
 
-				if (choice == 1)
+				if (option == 1)
 				{
 					Console.Clear();
 					Console.WriteLine("Add new employee");
@@ -33,12 +33,12 @@
 					Console.WriteLine("2. End application");
                     Console.WriteLine();
 
-                    choice = InputManager.GetMenuOption();
+                    option = InputManager.GetMenuOption();
 
-					if (choice == 1) continue;
+					if (option == 1) continue;
 					else break;
 				}
-				if (choice == 2)
+				if (option == 2)
 				{
 					Console.Clear();
 					Console.WriteLine("List of all employees");
@@ -56,9 +56,9 @@
 					Console.WriteLine("2. End application");
 					Console.WriteLine();
 
-					choice = InputManager.GetMenuOption();
+					option = InputManager.GetMenuOption();
 
-					if (choice == 1) continue;
+					if (option == 1) continue;
 					else break;
 				}
 			}
