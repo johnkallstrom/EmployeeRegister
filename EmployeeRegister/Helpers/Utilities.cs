@@ -5,8 +5,6 @@
         private const int MIN = 1;
         private const int MAX = 2;
 
-        private const string DIGITS = "0123456789";
-
         public static int GetMenuOption()
         {
             while (true)
